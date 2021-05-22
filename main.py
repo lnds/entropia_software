@@ -1,11 +1,13 @@
 def main(n: int) -> int:
   if n <= 0: return n
-  sum = 0
-  for i in range(n):
-    if i % 3 == 0 or i % 5 == 0:
-      sum += i
-  return sum
 
+  def sum_step(step):
+    sum = 0
+    for i in range(step, n, step):
+        sum += i
+    return sum
+    
+  return sum_step(3) + sum_step(5) - sum_step(3*5)
 
 if __name__ == "__main__":
   try:
