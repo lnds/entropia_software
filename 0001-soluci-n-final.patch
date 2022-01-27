@@ -1,0 +1,32 @@
+From ff492f92f4c9a9fbfc113e650f3b03a5d1f5637b Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Eduardo=20Di=CC=81az?= <ediaz@dcc8090.cl>
+Date: Sun, 16 May 2021 16:23:06 -0400
+Subject: [PATCH] =?UTF-8?q?soluci=C3=B3n=20final?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+---
+ main.py | 6 ++----
+ 1 file changed, 2 insertions(+), 4 deletions(-)
+
+diff --git a/main.py b/main.py
+index 6222402..84985c7 100644
+--- a/main.py
++++ b/main.py
+@@ -2,10 +2,8 @@ def main(n: int) -> int:
+   if n <= 0: return 0
+ 
+   def sum_step(step):
+-    sum = 0
+-    for i in range(step, n, step):
+-        sum += i
+-    return sum
++    p = (n - 1) // step
++    return step * p * (p + 1) // 2
+     
+   return sum_step(3) + sum_step(5) - sum_step(3*5)
+ 
+-- 
+2.30.2
+
